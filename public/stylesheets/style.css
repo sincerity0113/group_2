@@ -1,0 +1,131 @@
+html,body{
+  background: #2980B9;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #FFFFFF, #6DD5FA, #2980B9);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #FFFFFF, #6DD5FA, #2980B9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 100%;
+  width: 100%;
+}
+.bg-light{
+  background-color: transparent !important;
+}
+h1{
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  font-weight: bold;
+}
+hr{
+  border-color:#FFFFFF;
+}
+h2{
+  color: #FFFFFF;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+.col-md-5{
+  background-color: #102542;
+  color: #FFFFFF;
+  padding: 2% 50px;
+  box-shadow: 0px 0px 20px #102542;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.btn-primary{
+  display: block;
+  margin: auto;
+  width: 25%;
+  border-radius: 50px;
+  background-color: #FFFFFF;
+  color: #102542;
+  text-shadow: 0 0 2px #102542;
+}
+.btn-primary:hover{
+  background-color: #102542;
+  color: #FFFFFF;
+}
+label{
+  color: white;
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-family: 'Montserrat', sans-serif;
+}
+p{
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+form.signup,
+form.login {
+  margin-top: 50px;
+}
+input[type=email], input[type=password],
+input[type=email]:active, input[type=password]:active,
+input[type=email]:focus, input[type=password]:focus{
+  background-color: transparent;
+  font-family: 'Montserrat', sans-serif;
+  color: #FFFFFF;
+  border: 2px solid #FFFFFF;
+  padding: 10px;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white !important;
+  opacity: 0.6 !important; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: white;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: white;
+}
+
+/* members page */
+h4{
+  margin-right: 2%;
+}
+.home-content-container{
+  position: relative;
+  z-index: 9;
+  height: 100%;
+  width: 100%;
+}
+.home-content-background{
+  background-image: url(/assets/img/img-0.jpg);
+  height: 100vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+.home-content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+.start-btn{
+  display: block;
+  margin: 30px auto;
+  height: 50px;
+  width: 30%;
+  background-color: #FFFFFF;
+  color: #102542;
+  text-shadow: 0 0 2px #102542;
+
+}
+
+}
+@media screen and (max-width: 600px) {
+.start-btn{
+    width: 50%;
+  }
+  
+}
+

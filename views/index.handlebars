@@ -1,0 +1,220 @@
+
+<!-- header -->
+{{!-- <nav class="header-container">
+  <span id="logo" class="navbar-brand mb-0 h1">
+      <i class="far fa-grin"></i>&nbsp;{{title}}
+  </span>
+</nav> --}}
+<!-- navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+
+
+ {{!-- changed the nav from fixed-top to static-top --}}
+  <nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
+
+    <h4>Welcome <span class="member-name"></span></h4>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/members">Home <span class="sr-only">(current)</span></a>
+
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/chart">Your weekly report <span class="sr-only"></span></a>
+
+        </li>
+      </ul>
+      <a class="nav-link logout-link" href="/logout"><span class="navbar-text"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+  </nav>
+<div class="container page-container">
+
+
+    <!-- front window container -->
+    <div class="container front-window">
+      <h1>Choose the best that describes your feeling right now:</h1>
+      <!-- button for happy -->
+      <button type="button" class="btn btn-outline-primary" id="happy-btn">Happy</button>
+
+      <!-- button for neutral -->
+      <button type="button" class="btn btn-outline-primary" id="neutral-btn">Neutral</button>
+
+      <!-- button for sad -->
+      <button type="button" class="btn btn-outline-primary" id="sad-btn">Sad</button>
+    </div>
+
+
+
+    <!-- emojis container -->
+    <div class="container" id="happy-emoji-container">
+      <button class="x-button"><i class="fas fa-times"></i></button><br>
+        {{!-- <div class="dropdown">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+          Tell us the precision of your happiness
+        </button>
+        <div class="dropdown-menu dropdown-menu-right"> --}}
+          {{!-- <ul> --}}
+          {{#each positivePolarityEmojis}}
+            {{!-- <li class="dropdown-item emoji-size" data-toggle="modal" data-target="#myModal"> --}}
+              <span class="emoji-info" data-id={{id}} data-name={{name}} data-polarity={{polarity}}>{{emoji}}</span>
+               {{!-- {{name}} {{polarity}} --}}
+            {{!-- </li> --}}
+          {{/each}}
+          {{!-- </ul> --}}
+{{!--
+        </div>
+      </div> --}}
+    </div>
+
+
+  <div class="container" id="neutral-emoji-container">
+    <button class="x-button"><i class="fas fa-times"></i></button><br>
+    {{!-- <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+      Tell us your feeling
+    </button>
+    <div class="dropdown-menu dropdown-menu-right"> --}}
+
+      {{#each neutralPolarityEmojis}}
+        {{!-- <button class="dropdown-item emoji-size" data-toggle="modal" data-target="#myModal"> --}}
+          <span class="emoji-info" data-id={{id}} data-name={{name}} data-polarity={{polarity}}>{{emoji}}</span>
+          {{!-- {{name}} {{polarity}}  --}}
+        {{!-- </button> --}}
+      {{/each}}
+
+
+    {{!-- </div> --}}
+  </div>
+
+
+  <div class="container" id="sad-emoji-container">
+    <button class="x-button"><i class="fas fa-times"></i></button><br>
+    {{!-- <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+      Tell us the precision of your sadness
+    </button>
+    <div class="dropdown-menu dropdown-menu-right">
+      <ul> --}}
+      {{#each negativePolarityEmojis}}
+        {{!-- <li class="dropdown-item emoji-size" data-toggle="modal" data-target="#myModal"> --}}
+          <span class="emoji-info" data-id={{id}} data-name={{name}} data-polarity={{polarity}}>{{emoji}}</span>
+          {{!-- {{name}} {{polarity}}  --}}
+        {{!-- </li> --}}
+      {{/each}}
+      {{!-- </ul>
+
+    </div> --}}
+
+    
+    <!-- front window container -->
+    <div class="container front-window">
+      <h1>Choose the best that describes your feeling right now:</h1>
+     <div class="emoBtn">
+      
+      <div class="row">
+        <div class="col-lg-4 col-sm-12">
+          <!-- button for happy -->
+            <button type="button" class="btn btn-block btn-lg btn-outline-primary" id="happy-btn">Happy</button>
+        </div>
+        <div class="col-lg-4 col-sm-12">
+          <!-- button for neutral -->
+          <button type="button" class="btn btn-block btn-lg btn-outline-primary" id="neutral-btn">Neutral</button>
+        </div>
+        <div class="col-lg-4 col-sm-12">
+          <!-- button for sad -->
+          <button type="button" class="btn btn-block btn-lg btn-outline-primary" id="sad-btn">Sad</button>
+        </div>
+      </div> <!-- /row -->
+    </div>
+    </div>
+
+     
+
+    <!-- emojis container -->
+    <div class="containerE overflow-auto" id="happy-emoji-container">
+      <button class="x-button"><i class="fas fa-times"></i></button><br>
+        {{#each positivePolarityEmojis}}
+            <span class="emoji-info" name="emojiIcon" data-id="{{id}}" data-polarity="{{polarity}}" data-name={{name}}>{{emoji}}</span>
+        {{/each}}
+    </div>
+
+
+    <div class="containerE overflow-auto" id="neutral-emoji-container">
+      <button class="x-button"><i class="fas fa-times"></i></button><br>
+        {{#each neutralPolarityEmojis}}
+            <span class="emoji-info" name="emojiIcon" data-id="{{id}}" data-polarity="{{polarity}}" data-name={{name}}>{{emoji}}</span>
+        {{/each}}
+    </div>
+
+  
+  <div class="containerE overflow-auto" id="sad-emoji-container">
+    <button class="x-button"><i class="fas fa-times"></i></button><br>
+      {{#each negativePolarityEmojis}}
+          <span class="emoji-info" name="emojiIcon" data-id="{{id}}" data-polarity="{{polarity}}" data-name={{name}}>{{emoji}}</span>
+      {{/each}}
+
+  </div>
+
+</div>
+
+
+
+<!-- The Modal -->
+<div class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"><i class="fas fa-exclamation-triangle"></i> Are you sure with this emoji?</h5>
+      </div>
+      <div class="modal-body">
+        <p id="emoji-icon"></p>
+      </div>
+      <div class="modal-footer">
+        <!-- close button -->
+        <button type="button" id="close-btn" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <!-- function for this button is still in need -->
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  {{!-- <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+
+<!-- The Modal -->
+<div class="modal" tabindex="1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"><i class="fas fa-exclamation-triangle"></i> Are you sure with this emoji?</h5>
+      </div>
+      <div class="modal-body">
+        <p id="emoji-icon"></p>
+
+        <form id="textarea">
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Write down what happened:</label>
+            <textarea class="form-control" id="comment" rows="5"></textarea>
+          </div>
+      </form>
+
+
+      </div>
+      <div class="modal-footer">
+        <!-- close button -->
+        <button type="button" id="close-btn" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <!-- function for this button is still in need -->
+        <button type="button" id="confirm-btn" class="btn btn-primary"></button>
+      </div>
+    </div>
+
+  </div> --}}
+
+  </div>
+</div>
+
