@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -16,8 +17,10 @@
     <script src="https://kit.fontawesome.com/82b6df3084.js"></script>
 
     <!-- custom css -->
-    <link href="assets/css/chartStyle.css" rel="stylesheet">
+    <!-- <link href="stylesheets/style.css" rel="stylesheet"> -->
+    <!-- <link href="assets/css/chartStyle.css" rel="stylesheet"> -->
 
+    <!-- <link rel="stylesheet" href="assets/css/chartStyle.css"> -->
 </head>
 
 <body>
@@ -30,11 +33,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/members">Home <span class="sr-only"></span></a>
+                <li class="nav-item mr-auto">
+                    <a class="nav-link" href="/members">Home</a>
                 </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="/chart">Your weekly report <span class="sr-only">(current)</span></a>
+                <li class="nav-item mr-auto">
+                    <a class="nav-link" href="/chart">Your weekly report</a>
                 </li>
                 <li class="nav-item mr-auto">
                     <a class="nav-link" href="/history">History</a>
@@ -44,31 +47,34 @@
                     Logout</a>
         </div>
     </nav>
+    <div class="p-4">&nbsp;</div>
+    <div class="container bg-light">
 
-    <div class="container">
-
-        <div class="row">
-            <div class="col-lg-12 col-sm-12">
-                <div class="card">
-                    <div class="card-body">
-
-                        <canvas id="myChart" width="200" height="100"></canvas>
-                        <div class="mt-4 text-center">
-                            <button class="btn btn-primary" id="line"><i class='fas fa-chart-line'></i>&nbsp;Line
-                                Graph</button>
-                            <button class="btn btn-secondary" id="bar"><i class='fas fa-chart-bar'></i>&nbsp;Bar
-                                Graph</button>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
+        <div class="text-center mb-4">
+            <h3>History of your mood</h3>
         </div>
 
+        <!-- History Table -->
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th class="text-center" scope="col">Emoji Names</th>
+                    <th class="text-center" scope="col">Emojis</th>
+                    <th class="text-center" scope="col">Comments</th>
+                </tr>
+            </thead>
+            <tbody class="report">
+                <!-- each row -->
 
+            </tbody>
+        </table>
     </div>
 
-    <footer class="footer py-4 text-dark">
+
+
+
+    <div class="p-5">&nbsp;</div>
+    <footer class="footer fixed-bottom py-4 text-dark">
         <div class="container text-center">
             <small>&copy;
                 <script type="text/javascript">
@@ -77,19 +83,16 @@
                 UofT SCS Coding Bootcamp (FourDevGuys)</small>
         </div>
     </footer>
-
     <!-- jQuery CDN -->
     <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
     <!-- chart.js-->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script> -->
     <!-- custom js -->
-    <script type="text/javascript" src="assets/js/chart.js"></script>
-
-    <link rel="stylesheet" href="assets/css/chartStyle.css">
-
+    <script type="text/javascript" src="assets/js/history.js"></script>
+    <script type="text/javascript" src="assets/js/members.js"></script>
 </body>
 
 </html>

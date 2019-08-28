@@ -16,14 +16,12 @@ module.exports = function(app){
     res.sendFile(path.join(__dirname, "../public/login.html"));
   });
 
-
-
-  app.get("/signup", function(req, res){
+  app.get("/login", function(req, res){
     // If the user already has an account send them to the members page
       if (req.user) {
         res.redirect("/members");
       }
-    res.sendFile(path.join(__dirname, "../public/signup.html"))
+    res.sendFile(path.join(__dirname, "../public/login.html"))
   });
 
   app.get("/members", isAuthenticated, function(req, res){
@@ -32,13 +30,17 @@ module.exports = function(app){
 
   app.get("/chart",isAuthenticated, function(req, res){
     res.sendFile(path.join(__dirname, "../public/chart.html"))
+  })
+
+  app.get("/history", isAuthenticated, function(req, res){
+    res.sendFile(path.join(__dirname, "../public/history.html"));
   });
 
 
-function findAllEmojis(){
+  function findAllEmojis(){
     // GET route for getting all of the emojis
-  app.get("/mood-track",isAuthenticated, function(req, res) {
-    var query = {};
+    app.get("/mood-track",isAuthenticated, function(req, res) {
+      var query = {};
     if (req.query.id) {
       query.id = req.query.id;
     }
@@ -50,11 +52,9 @@ function findAllEmojis(){
         return a.polarity-b.polarity
     })
 
-
     var positivePolarity = [];
     var neutralPolarity =[];
     var negativePolarity = [];
-
 
     for(var i = 0; i < sortedEmotion.length; i++){
         var emojiPolarity = sortedEmotion[i].polarity;
@@ -74,35 +74,39 @@ function findAllEmojis(){
     };
 
       res.render("index",data)
-      
+      });
     });
-});
-}
-findAllEmojis();
+    }
+    findAllEmojis();
 
-function findUserEmoji(){
-  app.get("/mood-track", isAuthenticated,function(req, res) {
-    // function findUserEmoji(){
-    //   app.get("/mood-track", function(req, res) {
-    
-    db.users.findAll({
-      include: [{
-        model: db.emojis,
-        as: 'umoji'
-      }]
-    }).then(function(dbusers) {
-        var data = {
-          Emojis: dbusers,
-            // neutralPolarityEmojis: neutralPolarity,
-            // negativePolarityEmojis: negativePolarity,
-            // title: "Emotion Tracker"
+    console.log();
+    function findUserEmoji(){
+      app.get("/mood-track", isAuthenticated,function(req, res) {
+
+        db.users.findAll({
+          include: [{
+            model: db.emojis,
+            as: 'umoji'
+          }]
+        }).then(function(dbusers) {
+
+          var data = {
+             Emojis: dbusers,
+
         };
-        res.render("index", data);
-      });//end of module.exports
-  });
-}
-findUserEmoji(); 
-};
+          res.render("index", data);
+        });
+        });
+      }
+      findUserEmoji()
+
+}; //end of module.exports
+
+
+
+
+
+
 
 
 
@@ -239,11 +243,7 @@ findUserEmoji();
 //     // If the user already has an account send them to the members page
 //     if (req.user) {
 //       res.redirect("/members");
-
 //     }
-
-//     }    
-
 //     res.sendFile(path.join(__dirname, "../public/signup.html"));
 //   });
 
@@ -281,29 +281,6 @@ findUserEmoji();
 // //   var positivePolarity = [];
 // //   var neutralPolarity =[];
 // //   var negativePolarity = [];
-
-
-
-// //   for(var i = 0; i < sortedEmotion.length; i++){
-// //       var emojiPolarity = sortedEmotion[i].polarity;
-// //       if(emojiPolarity > 0){
-// //           positivePolarity.push(dbemoji[i]);
-// //       }else if(emojiPolarity == 0){
-// //           neutralPolarity.push(dbemoji[i]);
-// //       }else{
-// //           negativePolarity.push(dbemoji[i]);
-// //       }
-// //   }
-// //   var data = {
-// //       positivePolarityEmojis: positivePolarity,
-// //       neutralPolarityEmojis: neutralPolarity,
-// //       negativePolarityEmojis: negativePolarity,
-// //       title: "Emotion Tracker"
-// //   };
-
-// //     res.render("index",data)
-// //   });
-// // });
 
 
 // //   for(var i = 0; i < sortedEmotion.length; i++){

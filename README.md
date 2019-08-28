@@ -41,20 +41,20 @@ It's a simple
 ## Sample images
 
 ### Home
-![](images/Screenshot1).png
-![](images/Screenshot2).png
+![](images/Screenshot1.png)
+![](images/Screenshot2.png)
 
 ### Emoji Page
-![](images/Screenshot3).png
-![](images/Screenshot4).png
+![](images/Screenshot3.png)
+![](images/Screenshot4.png)
 
 ### Emoji Choose and Comment 
-![](images/Screenshot5).png
-![](images/Screenshot6).png
+![](images/Screenshot5.png)
+![](images/Screenshot6.png)
 
 ### Chart 
-![](images/Screenshot7).png
-![](images/Screenshot8).png
+![](images/Screenshot7.png)
+![](images/Screenshot8.png)
 
 
 

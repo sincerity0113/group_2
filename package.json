@@ -1,5 +1,5 @@
 {
-  "name": "Project2",
+  "name": "4-devguys-project",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/four-devguys/Project2.git"
+    "url": "https://github.com/rajkumarshahu/4-devguys-project.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/four-devguys/Project2/issues"
+    "url": "https://github.com/rajkumarshahu/4-devguys-project/issues"
   },
-  "homepage": "https://github.com/four-devguys/Project2#readme",
+  "homepage": "https://github.com/rajkumarshahu/4-devguys-project#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
@@ -32,8 +32,7 @@
     "mysql2": "^1.6.5",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
-    "sequelize": "^4.44.3",
-    "sequelize-cli": "^5.5.0"
+    "sequelize": "^4.44.3"
   },
   "devDependencies": {
     "eslint": "^6.2.1"

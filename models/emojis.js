@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
       }
     },
     emoji: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
       validate: {
         len: [1]

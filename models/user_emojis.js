@@ -3,7 +3,7 @@ module.exports = (sequelize, DataTypes) => {
   const user_emojis = sequelize.define('user_emojis', {
     user_id: {
       type: DataTypes.INTEGER,
-      allowNull: false, 
+      allowNull: false,
       references: {
         model: 'users',
         key: 'id'
